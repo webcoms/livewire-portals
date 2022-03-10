@@ -12,7 +12,6 @@ Prism.highlightElement(document.querySelector('#{{$id}} pre'));
             el.addEventListener('portal-open', function (e) {
                 if (e.target.getAttribute('wire:portal') === e.detail.portal) {
                     e.target.innerHTML = e.detail.content;
-                    window.livewire.rescan();
                 }
             });
         });

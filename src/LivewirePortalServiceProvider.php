@@ -33,9 +33,6 @@ class LivewirePortalServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/livewire-portals.php', 'livewire-portals');
 
-        /**
-         * Stolen from: https://github.com/livewire/livewire/blob/5c7bf4eae4bb0b0a811fa79199a906a7c9d7917f/src/Macros/RouterMacros.php#L25
-         */
         Component::macro('openPortal', function (string $portal, string $component, array $data = []) {
             $content = view('livewire-portals::portal-view', [
                 'layout' => 'livewire-portals::portal-layout',

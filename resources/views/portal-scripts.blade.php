@@ -3,11 +3,15 @@
         window.addEventListener('portal-open', function (e) {
             var fn;
             var portal = document.querySelector('[wire\\:portal="'+e.detail.portal+'"]');
+
             if (portal.hasAttribute('wire:portal.replace')) {
                 portal.innerHTML = e.detail.content;
             } else {
                 portal.innerHTML += e.detail.content;
             }
+                    
+            window.livewire.rescan();
+
             if (portal.getAttribute('wire:portal-end')) {
                 eval(`var fn = function () {  ${portal.getAttribute('wire:portal-end')} }`);
                 fn.call()
