@@ -17,7 +17,6 @@
         "livewire/livewire": "^3.5"
     },
     "require-dev": {
-        "vimeo/psalm": "^5.25"
     },
     "autoload": {
         "psr-4": {
