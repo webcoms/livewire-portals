@@ -41,7 +41,11 @@ class LivewirePortalServiceProvider extends ServiceProvider
                 'componentParameters' => $data,
             ])->render();
 
-            $this->dispatchBrowserEvent('portal-open', compact('content', 'portal'));
+            $this->dispatch(
+                event: 'portal-open',
+                content: $content,
+                portal: $portal
+            );
         });
     }
 }
